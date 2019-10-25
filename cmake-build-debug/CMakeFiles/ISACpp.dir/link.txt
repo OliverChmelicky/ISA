@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/ISACpp.dir/main.cpp.o CMakeFiles/ISACpp.dir/methods.cpp.o CMakeFiles/ISACpp.dir/socketHelper.cpp.o CMakeFiles/ISACpp.dir/parseArgs.cpp.o CMakeFiles/ISACpp.dir/dbAccess.cpp.o  -o ISACpp 
