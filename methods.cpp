@@ -14,7 +14,7 @@ using namespace std;
 
 void errorNotFound(int);
 void errorContentLengthZero(int);
-void errorBoardExists(int socket);
+void errorExists(int socket);
 body readBody(string, int);
 
 
@@ -22,20 +22,19 @@ body readBody(string, int);
 //GET board/"name"  --> get specific board and it`s values
 void serveGET(std::string request, int socket, map<string, vector<string>> &db){
     std::string firstLine = request.substr(0, request.find('\n'));
-    URL querry = getParsedURL(&firstLine);
+    URL querry = parseUrlGET(&firstLine);
 
-    //one or two names in querry
     if (querry.type == "boards"){
         //vrat boards, ak neexistuje ziadna 404
-        //ak mam name alebo id v URL vrat 404
-        std::string answ = "HTTP/1.1 200 OK\nContent-Type: text/plain\nContent-Length: 14\n\nboards";
-        write(socket, answ.data(), answ.length() );
+        string allBoards;
+        getBoards(db,allBoards);
+        std::ostringstream answ;
+        answ << "HTTP/1.1 200 OK\nContent-Type: text/plain\nContent-Length: " <<allBoards.length()<<"\n\n"<< allBoards<<"";
+        write(socket, answ.str().data(), answ.str().length() );
         return;
     }
-    // two or three names in querry
     else if (querry.type == "board"){
         //check ci board/name existuje a vrat
-        //check ze nesmie mat ID a vrat 404
         std::string answ = "HTTP/1.1 200 OK\nContent-Type: text/plain\nContent-Length: 13\n\nboard";
         write(socket, answ.data(), answ.length() );
         return;
@@ -44,55 +43,75 @@ void serveGET(std::string request, int socket, map<string, vector<string>> &db){
     errorNotFound(socket);
 }
 
-//
-//
+// POST boards
+// POST board/name
 void servePOST(std::string request, int socket, map<string, vector<string>> &db) {
-    printf("Implementuj POST\n");
+    std::string answ = "HTTP/1.1 500 Internal Server Error\nContent-Length: 0\n\n";
     std::string firstLine = request.substr(0, request.find('\n'));
-    URL query = getParsedURL(&firstLine);
+    URL query = parseUrlPOST(&firstLine);
     int length;
 
     if (query.type == "boards"){
         if (query.name.empty()){
             errorNotFound(socket);
-            cout << "Not BOARDS err";
+            cout << "Not BOARDS err\n";
             return;
         }
         if (!contentTypeTxt(request)){
             errorNotFound(socket);
-            cout << "Content type err";
+            cout << "Content type err\n";
             return;
         }
         length = contentLength(request);
         if (length <= 0){
             errorContentLengthZero(socket);
-            cout << "Length err";
+            cout << "Length err\n";
             return;
         }
 
-        //reading from body
         body newBoard = readBody(request, length);
         if (newBoard.errCode != 0){
             errorNotFound(socket);
-            cout << "Body read err";
+            cout << "Body read err\n";
             return;
         }
         if ( 0 != createBoard(db, newBoard.content) ){
-            errorBoardExists(socket);
-            cout<< "Boar exists err";
+            errorExists(socket);
+            cout<< "Board exists err\n";
             return;
         }
-
-        //uloz
+        answ = "HTTP/1.1 201 Created\nContent-Length: 0\n\n";
     }
     else if (query.type == "board") {
         if (query.name.empty()){
             errorNotFound(socket);
             return;
         }
-    }
+        if (!contentTypeTxt(request)){
+            errorNotFound(socket);
+            cout << "Content type err\n";
+            return;
+        }
+        length = contentLength(request);
+        if (length <= 0){
+            errorContentLengthZero(socket);
+            cout << "Length err\n";
+            return;
+        }
 
-    std::string answ = "HTTP/1.1 404 PRESLO KAMO\nContent-Type: text/plain\nContent-Length: 14\n\nPOST";
+        body newPost = readBody(request, length);
+        if (newPost.errCode != 0){
+            errorNotFound(socket);
+            cout << "Body read err\n";
+            return;
+        }
+        if ( 0 != createPost(db, query.name,newPost.content) ){
+            errorNotFound(socket);
+            cout<< "Board does not exist\n";
+            return;
+        }
+        answ = "HTTP/1.1 201 Created\nContent-Length: 0\n\n";
+    }
     write(socket, answ.data(), answ.length() );
 }
 
@@ -119,7 +138,7 @@ void errorNotFound(int socket){
     write(socket, answ.data(), answ.length() );
 }
 
-void errorBoardExists(int socket){
+void errorExists(int socket){
     std::string answ = "HTTP/1.1 409 Conflict\nContent-Length: 0\n\n";
     write(socket, answ.data(), answ.length() );
 }

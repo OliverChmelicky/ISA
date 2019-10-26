@@ -15,7 +15,9 @@ struct URL {
 
 requestMethod getMethod(std::string);
 std::string getUnparsedURL(std::string*);
-URL getParsedURL(std::string*);
+//URL getParsedURL(std::string*);
+URL parseUrlGET(std::string*);
+URL parseUrlPOST(std::string*);
 std::string removeSpaces(std::string);
 int convertToInt(std::string);
 bool contentTypeTxt(std::string);

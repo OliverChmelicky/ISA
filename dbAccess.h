@@ -9,6 +9,8 @@
 #include <string>
 #include <map>
 
-int createBoard(std::map<std::string, std::vector<std::string>> &db, std::string);
+int createBoard(std::map<std::string, std::vector<std::string>> &db, const std::string&);
+void getBoards(std::map<std::string, std::vector<std::string>> &db, std::string&);
+int createPost(std::map<std::string, std::vector<std::string>> &db, const std::string&,const std::string&);
 
 #endif //ISACPP_DBACCESS_H

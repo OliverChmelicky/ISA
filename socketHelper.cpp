@@ -199,10 +199,84 @@ URL getParsedURL(string *rq) {
                 toReturn.id = id;
                 return toReturn;
             }
+            return errorStruct();
         }
     }
     return errorStruct();
 
+}
+
+URL parseUrlPOST(string *rq) {
+    string unparsed = getUnparsedURL(rq);
+
+    //parse according to '/' cound > 3 error + check first parameter if is board or boards and then react
+    replace(unparsed.begin(), unparsed.end(), '/', ' ');
+    vector<string> array;
+    stringstream ss(unparsed);
+    string temp;
+    while (ss >> temp)
+        array.push_back(temp);
+
+    if (array.size() < 1 || array.size() > 3) {
+        cout << "Err size\n";
+        return errorStruct();
+    } else if (array.front() == "boards" || array.front() == "board") {
+        //  /boards/name
+        if (array.front() == "boards") {
+            if (array.size() == 2) {
+                URL toReturn;
+                toReturn.type = array.front();
+                toReturn.name = array.back();
+                return toReturn;
+            }
+        }
+        // /board/name
+        if (array.front() == "board") {
+            if (array.size() == 2) {
+                URL toReturn;
+                toReturn.type = "board";
+                toReturn.name = array.back();
+                return toReturn;
+            }
+        }
+    }
+    return errorStruct();
+}
+
+URL parseUrlGET(string *rq) {
+    string unparsed = getUnparsedURL(rq);
+
+    //parse according to '/' cound > 3 error + check first parameter if is board or boards and then react
+    replace(unparsed.begin(), unparsed.end(), '/', ' ');
+    vector<string> array;
+    stringstream ss(unparsed);
+    string temp;
+    while (ss >> temp)
+        array.push_back(temp);
+
+    if (array.size() < 1 || array.size() > 2) {
+        cout << "Err size\n";
+        return errorStruct();
+    } else if (array.front() == "boards" || array.front() == "board") {
+        //  /boards
+        if (array.front() == "boards") {
+            if (array.size() == 1) {
+                URL toReturn;
+                toReturn.type = "boards";
+                return toReturn;
+            }
+        }
+        // /board/name
+        if (array.front() == "board") {
+            if (array.size() == 2) {
+                URL toReturn;
+                toReturn.type = "board";
+                toReturn.name = array.back();
+                return toReturn;
+            }
+        }
+    }
+    return errorStruct();
 }
 
 string getUnparsedURL(string *rq) {
