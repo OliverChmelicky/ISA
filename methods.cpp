@@ -211,13 +211,6 @@ void serveDELETE(std::string request, int socket, map<string, vector<string>> &d
         answ = "HTTP/1.1 200 OK\nContent-Length: 0\n\n";
     }
 
-    cout<<"ID :";
-    cout<<query.id<< endl;
-    cout<<"NAME :";
-    cout<<query.name<<endl;
-    cout<<"TYPE :";
-    cout<<query.type<<endl;
-
     write(socket, answ.data(), answ.length() );
 };
 

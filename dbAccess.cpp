@@ -77,9 +77,6 @@ int updatePost(std::map<std::string, std::vector<std::string>> &db, int index ,c
 
     db[boardName][index-1] = newPost;
 
-    cout<< "Novy ost je";
-    cout<< newPost;
-
     return 0;
 }
 

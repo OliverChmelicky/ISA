@@ -104,6 +104,7 @@ int main(int argc, char *argv[]) {
             std::cout << elem.first <<  " " << elem.second.size() << "\n";
         }
 
+        //pories free ak bude viac krat potrebne citat
         std::fill_n(request, BUFSIZ, 0);
         close(new_socket);
     }
