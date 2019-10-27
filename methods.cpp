@@ -6,6 +6,10 @@
 #include <unistd.h>
 #include <algorithm>
 #include<map>
+#include <iostream>
+#include <string>
+#include <regex>
+#include <iomanip>
 #include "methods.h"
 #include "socketHelper.h"
 #include "dbAccess.h"
@@ -13,19 +17,18 @@
 using namespace std;
 
 void errorNotFound(int);
-void errorContentLengthZero(int);
+void errorBadRequest(int);
 void errorExists(int socket);
 body readBody(string, int);
 
 
 //GET boards --> get all board names
-//GET board/"name"  --> get specific board and it`s values
+//GET board/[name]  --> get specific board and it`s values
 void serveGET(std::string request, int socket, map<string, vector<string>> &db){
     std::string firstLine = request.substr(0, request.find('\n'));
     URL querry = parseUrlGET(&firstLine);
 
     if (querry.type == "boards"){
-        //vrat boards, ak neexistuje ziadna 404
         string allBoards;
         getBoards(db,allBoards);
         std::ostringstream answ;
@@ -35,8 +38,15 @@ void serveGET(std::string request, int socket, map<string, vector<string>> &db){
     }
     else if (querry.type == "board"){
         //check ci board/name existuje a vrat
-        std::string answ = "HTTP/1.1 200 OK\nContent-Type: text/plain\nContent-Length: 13\n\nboard";
-        write(socket, answ.data(), answ.length() );
+        string posts;
+        if (0 != getPosts(db, querry.name,posts)){
+            errorNotFound(socket);
+            cout << "Board was not found\n";
+            return;
+        }
+        std::ostringstream answ;
+        answ << "HTTP/1.1 200 OK\nContent-Type: text/plain\nContent-Length: " <<posts.length()<<"\n\n"<< posts<<"";
+        write(socket, answ.str().data(), answ.str().length() );
         return;
     }
 
@@ -44,7 +54,7 @@ void serveGET(std::string request, int socket, map<string, vector<string>> &db){
 }
 
 // POST boards
-// POST board/name
+// POST board/[name]
 void servePOST(std::string request, int socket, map<string, vector<string>> &db) {
     std::string answ = "HTTP/1.1 500 Internal Server Error\nContent-Length: 0\n\n";
     std::string firstLine = request.substr(0, request.find('\n'));
@@ -64,15 +74,27 @@ void servePOST(std::string request, int socket, map<string, vector<string>> &db)
         }
         length = contentLength(request);
         if (length <= 0){
-            errorContentLengthZero(socket);
+            errorBadRequest(socket);
             cout << "Length err\n";
             return;
         }
 
         body newBoard = readBody(request, length);
         if (newBoard.errCode != 0){
-            errorNotFound(socket);
+            errorBadRequest(socket);
             cout << "Body read err\n";
+            return;
+        }
+        if (query.name != newBoard.content){
+            errorBadRequest(socket);
+            cout << "Body does not match URL\n";
+            return;
+        }
+        const std::regex re( "[a-zA-Z0-9]*" ) ;
+        std::smatch match ;
+        if( !std::regex_match( query.name, match, re ) ){
+            errorBadRequest(socket);
+            cout << "Regex err\n";
             return;
         }
         if ( 0 != createBoard(db, newBoard.content) ){
@@ -80,6 +102,7 @@ void servePOST(std::string request, int socket, map<string, vector<string>> &db)
             cout<< "Board exists err\n";
             return;
         }
+
         answ = "HTTP/1.1 201 Created\nContent-Length: 0\n\n";
     }
     else if (query.type == "board") {
@@ -94,7 +117,7 @@ void servePOST(std::string request, int socket, map<string, vector<string>> &db)
         }
         length = contentLength(request);
         if (length <= 0){
-            errorContentLengthZero(socket);
+            errorBadRequest(socket);
             cout << "Length err\n";
             return;
         }
@@ -115,20 +138,95 @@ void servePOST(std::string request, int socket, map<string, vector<string>> &db)
     write(socket, answ.data(), answ.length() );
 }
 
-void servePUT(){
-    printf("Implementuj PUT\n");
+//  /board/[name]/[index]
+void servePUT(std::string request, int socket, map<string, vector<string>> &db){
+    std::string answ = "HTTP/1.1 500 Internal Server Error\nContent-Length: 0\n\n";
+    std::string firstLine = request.substr(0, request.find('\n'));
+    URL query = parseUrlPUT(&firstLine);
+    int length;
+
+    if (query.type == "board") {
+        if (query.name.empty()){
+            errorNotFound(socket);
+            return;
+        }
+        if (!contentTypeTxt(request)){
+            errorNotFound(socket);
+            cout << "Content type err\n";
+            return;
+        }
+        length = contentLength(request);
+        if (length <= 0){
+            errorBadRequest(socket);
+            cout << "Length err\n";
+            return;
+        }
+
+        body newPost = readBody(request, length);
+        if (newPost.errCode != 0){
+            errorNotFound(socket);
+            cout << "Body read err\n";
+            return;
+        }
+
+        if ( 0 != updatePost(db, query.id, newPost.content,query.name) ){
+            errorNotFound(socket);
+            cout<< "Board does not exist\n";
+            return;
+        }
+        answ = "HTTP/1.1 200 OK\nContent-Length: 0\n\n";
+    }
+
+    write(socket, answ.data(), answ.length() );
 };
 
-void serveDELETE(){
-    printf("Implementuj DELETE\n");
+void serveDELETE(std::string request, int socket, map<string, vector<string>> &db){
+    std::string answ = "HTTP/1.1 500 Internal Server Error\nContent-Length: 0\n\n";
+    std::string firstLine = request.substr(0, request.find('\n'));
+    URL query = parseUrlDELETE(&firstLine);
+
+    if (query.type == "boards"){
+        if (query.name.empty()){
+            errorNotFound(socket);
+            cout << "Not BOARDS err\n";
+            return;
+        }
+        if ( 0 != deleteBoard(db, query.name) ){
+            errorNotFound(socket);
+            cout<< "Board does not exist\n";
+            return;
+        }
+        answ = "HTTP/1.1 200 OK\nContent-Length: 0\n\n";
+    }
+    if (query.type == "board") {
+        if (query.name.empty()){
+            errorNotFound(socket);
+            return;
+        }
+        if ( 0 != deletePost(db, query.id, query.name) ){
+            errorNotFound(socket);
+            cout<< "Board does not exist or id is not in range\n";
+            return;
+        }
+        answ = "HTTP/1.1 200 OK\nContent-Length: 0\n\n";
+    }
+
+    cout<<"ID :";
+    cout<<query.id<< endl;
+    cout<<"NAME :";
+    cout<<query.name<<endl;
+    cout<<"TYPE :";
+    cout<<query.type<<endl;
+
+    write(socket, answ.data(), answ.length() );
+};
+
+void serveUNSUPPORTED(int socket){
+    std::string answ = "HTTP/1.1 405 Method Not Allowed\nContent-Length: 0\n\n";
+    write(socket, answ.data(), answ.length() );
 }
 
-void serveUNSUPPORTED(){
-    printf("Implementuj UNSUPORTED\n");
-    //return errorUnsupportedMethod(socket);
-}
-
-void errorContentLengthZero(int socket){
+void errorBadRequest(int socket){
     std::string answ = "HTTP/1.1 400 Bad Request\nContent-Length: 0\n\n";
     write(socket, answ.data(), answ.length() );
 }

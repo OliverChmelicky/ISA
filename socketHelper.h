@@ -18,6 +18,8 @@ std::string getUnparsedURL(std::string*);
 //URL getParsedURL(std::string*);
 URL parseUrlGET(std::string*);
 URL parseUrlPOST(std::string*);
+URL parseUrlPUT(std::string*);
+URL parseUrlDELETE(std::string*);
 std::string removeSpaces(std::string);
 int convertToInt(std::string);
 bool contentTypeTxt(std::string);

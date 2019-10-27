@@ -12,16 +12,10 @@ struct body
     int errCode;
 };
 
-struct dbRead{
-    std::string content;
-    int id;
-    int errCode;
-};
-
 void serveGET(std::string, int, std::map<std::string, std::vector<std::string>> &db);
 void servePOST(std::string, int, std::map<std::string, std::vector<std::string>> &db);
-void servePUT();
-void serveDELETE();
-void serveUNSUPPORTED();
+void servePUT(std::string, int, std::map<std::string, std::vector<std::string>> &db);
+void serveDELETE(std::string, int, std::map<std::string, std::vector<std::string>> &db);
+void serveUNSUPPORTED(int);
 
 #endif //ISA_METHODS_H

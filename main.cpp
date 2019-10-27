@@ -91,11 +91,11 @@ int main(int argc, char *argv[]) {
         } else if (method == POST) {
             servePOST(request, new_socket, db);
         } else if (method == PUT) {
-            servePUT();
+            servePUT(request, new_socket, db);
         } else if (method == DELETE) {
-            serveDELETE();
+            serveDELETE(request, new_socket, db);
         } else {
-            serveUNSUPPORTED();
+            serveUNSUPPORTED(new_socket);
         }
 
         cout<< "\n\n";
@@ -104,7 +104,7 @@ int main(int argc, char *argv[]) {
             std::cout << elem.first <<  " " << elem.second.size() << "\n";
         }
 
-        //free(request);
+        std::fill_n(request, BUFSIZ, 0);
         close(new_socket);
     }
     return 0;
