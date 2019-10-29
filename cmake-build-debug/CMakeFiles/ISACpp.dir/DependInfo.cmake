@@ -4,11 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/olo/skola/ISACpp/dbAccess.cpp" "/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles/ISACpp.dir/dbAccess.cpp.o"
-  "/home/olo/skola/ISACpp/main.cpp" "/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles/ISACpp.dir/main.cpp.o"
-  "/home/olo/skola/ISACpp/methods.cpp" "/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles/ISACpp.dir/methods.cpp.o"
-  "/home/olo/skola/ISACpp/parseArgs.cpp" "/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles/ISACpp.dir/parseArgs.cpp.o"
-  "/home/olo/skola/ISACpp/socketHelper.cpp" "/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles/ISACpp.dir/socketHelper.cpp.o"
+  "/home/olo/skola/ISACpp/client/board-sender/boardSender.cpp" "/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles/ISACpp.dir/client/board-sender/boardSender.cpp.o"
+  "/home/olo/skola/ISACpp/client/item-sender/itemSender.cpp" "/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles/ISACpp.dir/client/item-sender/itemSender.cpp.o"
+  "/home/olo/skola/ISACpp/client/main.cpp" "/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles/ISACpp.dir/client/main.cpp.o"
+  "/home/olo/skola/ISACpp/client/parser/parser.cpp" "/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles/ISACpp.dir/client/parser/parser.cpp.o"
+  "/home/olo/skola/ISACpp/server/dbAccess.cpp" "/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles/ISACpp.dir/server/dbAccess.cpp.o"
+  "/home/olo/skola/ISACpp/server/main.cpp" "/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles/ISACpp.dir/server/main.cpp.o"
+  "/home/olo/skola/ISACpp/server/methods.cpp" "/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles/ISACpp.dir/server/methods.cpp.o"
+  "/home/olo/skola/ISACpp/server/parseArgs.cpp" "/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles/ISACpp.dir/server/parseArgs.cpp.o"
+  "/home/olo/skola/ISACpp/server/socketHelper.cpp" "/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles/ISACpp.dir/server/socketHelper.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

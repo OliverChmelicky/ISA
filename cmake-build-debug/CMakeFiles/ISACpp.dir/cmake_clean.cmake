@@ -1,9 +1,13 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/ISACpp.dir/dbAccess.cpp.o"
-  "CMakeFiles/ISACpp.dir/main.cpp.o"
-  "CMakeFiles/ISACpp.dir/methods.cpp.o"
-  "CMakeFiles/ISACpp.dir/parseArgs.cpp.o"
-  "CMakeFiles/ISACpp.dir/socketHelper.cpp.o"
+  "CMakeFiles/ISACpp.dir/client/board-sender/boardSender.cpp.o"
+  "CMakeFiles/ISACpp.dir/client/item-sender/itemSender.cpp.o"
+  "CMakeFiles/ISACpp.dir/client/main.cpp.o"
+  "CMakeFiles/ISACpp.dir/client/parser/parser.cpp.o"
+  "CMakeFiles/ISACpp.dir/server/dbAccess.cpp.o"
+  "CMakeFiles/ISACpp.dir/server/main.cpp.o"
+  "CMakeFiles/ISACpp.dir/server/methods.cpp.o"
+  "CMakeFiles/ISACpp.dir/server/parseArgs.cpp.o"
+  "CMakeFiles/ISACpp.dir/server/socketHelper.cpp.o"
   "ISACpp"
   "ISACpp.pdb"
 )

@@ -123,140 +123,248 @@ ISACpp/fast:
 	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/build
 .PHONY : ISACpp/fast
 
-dbAccess.o: dbAccess.cpp.o
+client/board-sender/boardSender.o: client/board-sender/boardSender.cpp.o
 
-.PHONY : dbAccess.o
-
-# target to build an object file
-dbAccess.cpp.o:
-	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/dbAccess.cpp.o
-.PHONY : dbAccess.cpp.o
-
-dbAccess.i: dbAccess.cpp.i
-
-.PHONY : dbAccess.i
-
-# target to preprocess a source file
-dbAccess.cpp.i:
-	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/dbAccess.cpp.i
-.PHONY : dbAccess.cpp.i
-
-dbAccess.s: dbAccess.cpp.s
-
-.PHONY : dbAccess.s
-
-# target to generate assembly for a file
-dbAccess.cpp.s:
-	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/dbAccess.cpp.s
-.PHONY : dbAccess.cpp.s
-
-main.o: main.cpp.o
-
-.PHONY : main.o
+.PHONY : client/board-sender/boardSender.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/main.cpp.o
-.PHONY : main.cpp.o
+client/board-sender/boardSender.cpp.o:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/client/board-sender/boardSender.cpp.o
+.PHONY : client/board-sender/boardSender.cpp.o
 
-main.i: main.cpp.i
+client/board-sender/boardSender.i: client/board-sender/boardSender.cpp.i
 
-.PHONY : main.i
+.PHONY : client/board-sender/boardSender.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/main.cpp.i
-.PHONY : main.cpp.i
+client/board-sender/boardSender.cpp.i:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/client/board-sender/boardSender.cpp.i
+.PHONY : client/board-sender/boardSender.cpp.i
 
-main.s: main.cpp.s
+client/board-sender/boardSender.s: client/board-sender/boardSender.cpp.s
 
-.PHONY : main.s
+.PHONY : client/board-sender/boardSender.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/main.cpp.s
-.PHONY : main.cpp.s
+client/board-sender/boardSender.cpp.s:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/client/board-sender/boardSender.cpp.s
+.PHONY : client/board-sender/boardSender.cpp.s
 
-methods.o: methods.cpp.o
+client/item-sender/itemSender.o: client/item-sender/itemSender.cpp.o
 
-.PHONY : methods.o
+.PHONY : client/item-sender/itemSender.o
 
 # target to build an object file
-methods.cpp.o:
-	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/methods.cpp.o
-.PHONY : methods.cpp.o
+client/item-sender/itemSender.cpp.o:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/client/item-sender/itemSender.cpp.o
+.PHONY : client/item-sender/itemSender.cpp.o
 
-methods.i: methods.cpp.i
+client/item-sender/itemSender.i: client/item-sender/itemSender.cpp.i
 
-.PHONY : methods.i
+.PHONY : client/item-sender/itemSender.i
 
 # target to preprocess a source file
-methods.cpp.i:
-	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/methods.cpp.i
-.PHONY : methods.cpp.i
+client/item-sender/itemSender.cpp.i:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/client/item-sender/itemSender.cpp.i
+.PHONY : client/item-sender/itemSender.cpp.i
 
-methods.s: methods.cpp.s
+client/item-sender/itemSender.s: client/item-sender/itemSender.cpp.s
 
-.PHONY : methods.s
+.PHONY : client/item-sender/itemSender.s
 
 # target to generate assembly for a file
-methods.cpp.s:
-	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/methods.cpp.s
-.PHONY : methods.cpp.s
+client/item-sender/itemSender.cpp.s:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/client/item-sender/itemSender.cpp.s
+.PHONY : client/item-sender/itemSender.cpp.s
 
-parseArgs.o: parseArgs.cpp.o
+client/main.o: client/main.cpp.o
 
-.PHONY : parseArgs.o
+.PHONY : client/main.o
 
 # target to build an object file
-parseArgs.cpp.o:
-	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/parseArgs.cpp.o
-.PHONY : parseArgs.cpp.o
+client/main.cpp.o:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/client/main.cpp.o
+.PHONY : client/main.cpp.o
 
-parseArgs.i: parseArgs.cpp.i
+client/main.i: client/main.cpp.i
 
-.PHONY : parseArgs.i
+.PHONY : client/main.i
 
 # target to preprocess a source file
-parseArgs.cpp.i:
-	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/parseArgs.cpp.i
-.PHONY : parseArgs.cpp.i
+client/main.cpp.i:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/client/main.cpp.i
+.PHONY : client/main.cpp.i
 
-parseArgs.s: parseArgs.cpp.s
+client/main.s: client/main.cpp.s
 
-.PHONY : parseArgs.s
+.PHONY : client/main.s
 
 # target to generate assembly for a file
-parseArgs.cpp.s:
-	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/parseArgs.cpp.s
-.PHONY : parseArgs.cpp.s
+client/main.cpp.s:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/client/main.cpp.s
+.PHONY : client/main.cpp.s
 
-socketHelper.o: socketHelper.cpp.o
+client/parser/parser.o: client/parser/parser.cpp.o
 
-.PHONY : socketHelper.o
+.PHONY : client/parser/parser.o
 
 # target to build an object file
-socketHelper.cpp.o:
-	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/socketHelper.cpp.o
-.PHONY : socketHelper.cpp.o
+client/parser/parser.cpp.o:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/client/parser/parser.cpp.o
+.PHONY : client/parser/parser.cpp.o
 
-socketHelper.i: socketHelper.cpp.i
+client/parser/parser.i: client/parser/parser.cpp.i
 
-.PHONY : socketHelper.i
+.PHONY : client/parser/parser.i
 
 # target to preprocess a source file
-socketHelper.cpp.i:
-	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/socketHelper.cpp.i
-.PHONY : socketHelper.cpp.i
+client/parser/parser.cpp.i:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/client/parser/parser.cpp.i
+.PHONY : client/parser/parser.cpp.i
 
-socketHelper.s: socketHelper.cpp.s
+client/parser/parser.s: client/parser/parser.cpp.s
 
-.PHONY : socketHelper.s
+.PHONY : client/parser/parser.s
 
 # target to generate assembly for a file
-socketHelper.cpp.s:
-	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/socketHelper.cpp.s
-.PHONY : socketHelper.cpp.s
+client/parser/parser.cpp.s:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/client/parser/parser.cpp.s
+.PHONY : client/parser/parser.cpp.s
+
+server/dbAccess.o: server/dbAccess.cpp.o
+
+.PHONY : server/dbAccess.o
+
+# target to build an object file
+server/dbAccess.cpp.o:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/server/dbAccess.cpp.o
+.PHONY : server/dbAccess.cpp.o
+
+server/dbAccess.i: server/dbAccess.cpp.i
+
+.PHONY : server/dbAccess.i
+
+# target to preprocess a source file
+server/dbAccess.cpp.i:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/server/dbAccess.cpp.i
+.PHONY : server/dbAccess.cpp.i
+
+server/dbAccess.s: server/dbAccess.cpp.s
+
+.PHONY : server/dbAccess.s
+
+# target to generate assembly for a file
+server/dbAccess.cpp.s:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/server/dbAccess.cpp.s
+.PHONY : server/dbAccess.cpp.s
+
+server/main.o: server/main.cpp.o
+
+.PHONY : server/main.o
+
+# target to build an object file
+server/main.cpp.o:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/server/main.cpp.o
+.PHONY : server/main.cpp.o
+
+server/main.i: server/main.cpp.i
+
+.PHONY : server/main.i
+
+# target to preprocess a source file
+server/main.cpp.i:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/server/main.cpp.i
+.PHONY : server/main.cpp.i
+
+server/main.s: server/main.cpp.s
+
+.PHONY : server/main.s
+
+# target to generate assembly for a file
+server/main.cpp.s:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/server/main.cpp.s
+.PHONY : server/main.cpp.s
+
+server/methods.o: server/methods.cpp.o
+
+.PHONY : server/methods.o
+
+# target to build an object file
+server/methods.cpp.o:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/server/methods.cpp.o
+.PHONY : server/methods.cpp.o
+
+server/methods.i: server/methods.cpp.i
+
+.PHONY : server/methods.i
+
+# target to preprocess a source file
+server/methods.cpp.i:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/server/methods.cpp.i
+.PHONY : server/methods.cpp.i
+
+server/methods.s: server/methods.cpp.s
+
+.PHONY : server/methods.s
+
+# target to generate assembly for a file
+server/methods.cpp.s:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/server/methods.cpp.s
+.PHONY : server/methods.cpp.s
+
+server/parseArgs.o: server/parseArgs.cpp.o
+
+.PHONY : server/parseArgs.o
+
+# target to build an object file
+server/parseArgs.cpp.o:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/server/parseArgs.cpp.o
+.PHONY : server/parseArgs.cpp.o
+
+server/parseArgs.i: server/parseArgs.cpp.i
+
+.PHONY : server/parseArgs.i
+
+# target to preprocess a source file
+server/parseArgs.cpp.i:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/server/parseArgs.cpp.i
+.PHONY : server/parseArgs.cpp.i
+
+server/parseArgs.s: server/parseArgs.cpp.s
+
+.PHONY : server/parseArgs.s
+
+# target to generate assembly for a file
+server/parseArgs.cpp.s:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/server/parseArgs.cpp.s
+.PHONY : server/parseArgs.cpp.s
+
+server/socketHelper.o: server/socketHelper.cpp.o
+
+.PHONY : server/socketHelper.o
+
+# target to build an object file
+server/socketHelper.cpp.o:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/server/socketHelper.cpp.o
+.PHONY : server/socketHelper.cpp.o
+
+server/socketHelper.i: server/socketHelper.cpp.i
+
+.PHONY : server/socketHelper.i
+
+# target to preprocess a source file
+server/socketHelper.cpp.i:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/server/socketHelper.cpp.i
+.PHONY : server/socketHelper.cpp.i
+
+server/socketHelper.s: server/socketHelper.cpp.s
+
+.PHONY : server/socketHelper.s
+
+# target to generate assembly for a file
+server/socketHelper.cpp.s:
+	$(MAKE) -f CMakeFiles/ISACpp.dir/build.make CMakeFiles/ISACpp.dir/server/socketHelper.cpp.s
+.PHONY : server/socketHelper.cpp.s
 
 # Help Target
 help:
@@ -267,21 +375,33 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... ISACpp"
 	@echo "... edit_cache"
-	@echo "... dbAccess.o"
-	@echo "... dbAccess.i"
-	@echo "... dbAccess.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... methods.o"
-	@echo "... methods.i"
-	@echo "... methods.s"
-	@echo "... parseArgs.o"
-	@echo "... parseArgs.i"
-	@echo "... parseArgs.s"
-	@echo "... socketHelper.o"
-	@echo "... socketHelper.i"
-	@echo "... socketHelper.s"
+	@echo "... client/board-sender/boardSender.o"
+	@echo "... client/board-sender/boardSender.i"
+	@echo "... client/board-sender/boardSender.s"
+	@echo "... client/item-sender/itemSender.o"
+	@echo "... client/item-sender/itemSender.i"
+	@echo "... client/item-sender/itemSender.s"
+	@echo "... client/main.o"
+	@echo "... client/main.i"
+	@echo "... client/main.s"
+	@echo "... client/parser/parser.o"
+	@echo "... client/parser/parser.i"
+	@echo "... client/parser/parser.s"
+	@echo "... server/dbAccess.o"
+	@echo "... server/dbAccess.i"
+	@echo "... server/dbAccess.s"
+	@echo "... server/main.o"
+	@echo "... server/main.i"
+	@echo "... server/main.s"
+	@echo "... server/methods.o"
+	@echo "... server/methods.i"
+	@echo "... server/methods.s"
+	@echo "... server/parseArgs.o"
+	@echo "... server/parseArgs.i"
+	@echo "... server/parseArgs.s"
+	@echo "... server/socketHelper.o"
+	@echo "... server/socketHelper.i"
+	@echo "... server/socketHelper.s"
 .PHONY : help
 
 

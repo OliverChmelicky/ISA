@@ -82,31 +82,55 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/olo/skola/ISACpp/dbAccess.cpp">
+		<Unit filename="/home/olo/skola/ISACpp/client/board-sender/boardSender.cpp">
 			<Option target="ISACpp"/>
 		</Unit>
-		<Unit filename="/home/olo/skola/ISACpp/dbAccess.h">
+		<Unit filename="/home/olo/skola/ISACpp/client/board-sender/boardSender.h">
 			<Option target="ISACpp"/>
 		</Unit>
-		<Unit filename="/home/olo/skola/ISACpp/main.cpp">
+		<Unit filename="/home/olo/skola/ISACpp/client/enums/enums.h">
 			<Option target="ISACpp"/>
 		</Unit>
-		<Unit filename="/home/olo/skola/ISACpp/methods.cpp">
+		<Unit filename="/home/olo/skola/ISACpp/client/item-sender/itemSender.cpp">
 			<Option target="ISACpp"/>
 		</Unit>
-		<Unit filename="/home/olo/skola/ISACpp/methods.h">
+		<Unit filename="/home/olo/skola/ISACpp/client/item-sender/itemSender.h">
 			<Option target="ISACpp"/>
 		</Unit>
-		<Unit filename="/home/olo/skola/ISACpp/parseArgs.cpp">
+		<Unit filename="/home/olo/skola/ISACpp/client/main.cpp">
 			<Option target="ISACpp"/>
 		</Unit>
-		<Unit filename="/home/olo/skola/ISACpp/parseArgs.h">
+		<Unit filename="/home/olo/skola/ISACpp/client/parser/parser.cpp">
 			<Option target="ISACpp"/>
 		</Unit>
-		<Unit filename="/home/olo/skola/ISACpp/socketHelper.cpp">
+		<Unit filename="/home/olo/skola/ISACpp/client/parser/parser.h">
 			<Option target="ISACpp"/>
 		</Unit>
-		<Unit filename="/home/olo/skola/ISACpp/socketHelper.h">
+		<Unit filename="/home/olo/skola/ISACpp/server/dbAccess.cpp">
+			<Option target="ISACpp"/>
+		</Unit>
+		<Unit filename="/home/olo/skola/ISACpp/server/dbAccess.h">
+			<Option target="ISACpp"/>
+		</Unit>
+		<Unit filename="/home/olo/skola/ISACpp/server/main.cpp">
+			<Option target="ISACpp"/>
+		</Unit>
+		<Unit filename="/home/olo/skola/ISACpp/server/methods.cpp">
+			<Option target="ISACpp"/>
+		</Unit>
+		<Unit filename="/home/olo/skola/ISACpp/server/methods.h">
+			<Option target="ISACpp"/>
+		</Unit>
+		<Unit filename="/home/olo/skola/ISACpp/server/parseArgs.cpp">
+			<Option target="ISACpp"/>
+		</Unit>
+		<Unit filename="/home/olo/skola/ISACpp/server/parseArgs.h">
+			<Option target="ISACpp"/>
+		</Unit>
+		<Unit filename="/home/olo/skola/ISACpp/server/socketHelper.cpp">
+			<Option target="ISACpp"/>
+		</Unit>
+		<Unit filename="/home/olo/skola/ISACpp/server/socketHelper.h">
 			<Option target="ISACpp"/>
 		</Unit>
 		<Unit filename="/home/olo/skola/ISACpp/CMakeLists.txt">

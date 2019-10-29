@@ -57,90 +57,150 @@ include CMakeFiles/ISACpp.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/ISACpp.dir/flags.make
 
-CMakeFiles/ISACpp.dir/main.cpp.o: CMakeFiles/ISACpp.dir/flags.make
-CMakeFiles/ISACpp.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ISACpp.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISACpp.dir/main.cpp.o -c /home/olo/skola/ISACpp/main.cpp
+CMakeFiles/ISACpp.dir/server/main.cpp.o: CMakeFiles/ISACpp.dir/flags.make
+CMakeFiles/ISACpp.dir/server/main.cpp.o: ../server/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ISACpp.dir/server/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISACpp.dir/server/main.cpp.o -c /home/olo/skola/ISACpp/server/main.cpp
 
-CMakeFiles/ISACpp.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ISACpp.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/olo/skola/ISACpp/main.cpp > CMakeFiles/ISACpp.dir/main.cpp.i
+CMakeFiles/ISACpp.dir/server/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ISACpp.dir/server/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/olo/skola/ISACpp/server/main.cpp > CMakeFiles/ISACpp.dir/server/main.cpp.i
 
-CMakeFiles/ISACpp.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ISACpp.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/olo/skola/ISACpp/main.cpp -o CMakeFiles/ISACpp.dir/main.cpp.s
+CMakeFiles/ISACpp.dir/server/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ISACpp.dir/server/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/olo/skola/ISACpp/server/main.cpp -o CMakeFiles/ISACpp.dir/server/main.cpp.s
 
-CMakeFiles/ISACpp.dir/methods.cpp.o: CMakeFiles/ISACpp.dir/flags.make
-CMakeFiles/ISACpp.dir/methods.cpp.o: ../methods.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ISACpp.dir/methods.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISACpp.dir/methods.cpp.o -c /home/olo/skola/ISACpp/methods.cpp
+CMakeFiles/ISACpp.dir/server/methods.cpp.o: CMakeFiles/ISACpp.dir/flags.make
+CMakeFiles/ISACpp.dir/server/methods.cpp.o: ../server/methods.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ISACpp.dir/server/methods.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISACpp.dir/server/methods.cpp.o -c /home/olo/skola/ISACpp/server/methods.cpp
 
-CMakeFiles/ISACpp.dir/methods.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ISACpp.dir/methods.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/olo/skola/ISACpp/methods.cpp > CMakeFiles/ISACpp.dir/methods.cpp.i
+CMakeFiles/ISACpp.dir/server/methods.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ISACpp.dir/server/methods.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/olo/skola/ISACpp/server/methods.cpp > CMakeFiles/ISACpp.dir/server/methods.cpp.i
 
-CMakeFiles/ISACpp.dir/methods.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ISACpp.dir/methods.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/olo/skola/ISACpp/methods.cpp -o CMakeFiles/ISACpp.dir/methods.cpp.s
+CMakeFiles/ISACpp.dir/server/methods.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ISACpp.dir/server/methods.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/olo/skola/ISACpp/server/methods.cpp -o CMakeFiles/ISACpp.dir/server/methods.cpp.s
 
-CMakeFiles/ISACpp.dir/socketHelper.cpp.o: CMakeFiles/ISACpp.dir/flags.make
-CMakeFiles/ISACpp.dir/socketHelper.cpp.o: ../socketHelper.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ISACpp.dir/socketHelper.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISACpp.dir/socketHelper.cpp.o -c /home/olo/skola/ISACpp/socketHelper.cpp
+CMakeFiles/ISACpp.dir/server/socketHelper.cpp.o: CMakeFiles/ISACpp.dir/flags.make
+CMakeFiles/ISACpp.dir/server/socketHelper.cpp.o: ../server/socketHelper.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ISACpp.dir/server/socketHelper.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISACpp.dir/server/socketHelper.cpp.o -c /home/olo/skola/ISACpp/server/socketHelper.cpp
 
-CMakeFiles/ISACpp.dir/socketHelper.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ISACpp.dir/socketHelper.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/olo/skola/ISACpp/socketHelper.cpp > CMakeFiles/ISACpp.dir/socketHelper.cpp.i
+CMakeFiles/ISACpp.dir/server/socketHelper.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ISACpp.dir/server/socketHelper.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/olo/skola/ISACpp/server/socketHelper.cpp > CMakeFiles/ISACpp.dir/server/socketHelper.cpp.i
 
-CMakeFiles/ISACpp.dir/socketHelper.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ISACpp.dir/socketHelper.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/olo/skola/ISACpp/socketHelper.cpp -o CMakeFiles/ISACpp.dir/socketHelper.cpp.s
+CMakeFiles/ISACpp.dir/server/socketHelper.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ISACpp.dir/server/socketHelper.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/olo/skola/ISACpp/server/socketHelper.cpp -o CMakeFiles/ISACpp.dir/server/socketHelper.cpp.s
 
-CMakeFiles/ISACpp.dir/parseArgs.cpp.o: CMakeFiles/ISACpp.dir/flags.make
-CMakeFiles/ISACpp.dir/parseArgs.cpp.o: ../parseArgs.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ISACpp.dir/parseArgs.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISACpp.dir/parseArgs.cpp.o -c /home/olo/skola/ISACpp/parseArgs.cpp
+CMakeFiles/ISACpp.dir/server/parseArgs.cpp.o: CMakeFiles/ISACpp.dir/flags.make
+CMakeFiles/ISACpp.dir/server/parseArgs.cpp.o: ../server/parseArgs.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ISACpp.dir/server/parseArgs.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISACpp.dir/server/parseArgs.cpp.o -c /home/olo/skola/ISACpp/server/parseArgs.cpp
 
-CMakeFiles/ISACpp.dir/parseArgs.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ISACpp.dir/parseArgs.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/olo/skola/ISACpp/parseArgs.cpp > CMakeFiles/ISACpp.dir/parseArgs.cpp.i
+CMakeFiles/ISACpp.dir/server/parseArgs.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ISACpp.dir/server/parseArgs.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/olo/skola/ISACpp/server/parseArgs.cpp > CMakeFiles/ISACpp.dir/server/parseArgs.cpp.i
 
-CMakeFiles/ISACpp.dir/parseArgs.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ISACpp.dir/parseArgs.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/olo/skola/ISACpp/parseArgs.cpp -o CMakeFiles/ISACpp.dir/parseArgs.cpp.s
+CMakeFiles/ISACpp.dir/server/parseArgs.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ISACpp.dir/server/parseArgs.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/olo/skola/ISACpp/server/parseArgs.cpp -o CMakeFiles/ISACpp.dir/server/parseArgs.cpp.s
 
-CMakeFiles/ISACpp.dir/dbAccess.cpp.o: CMakeFiles/ISACpp.dir/flags.make
-CMakeFiles/ISACpp.dir/dbAccess.cpp.o: ../dbAccess.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ISACpp.dir/dbAccess.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISACpp.dir/dbAccess.cpp.o -c /home/olo/skola/ISACpp/dbAccess.cpp
+CMakeFiles/ISACpp.dir/server/dbAccess.cpp.o: CMakeFiles/ISACpp.dir/flags.make
+CMakeFiles/ISACpp.dir/server/dbAccess.cpp.o: ../server/dbAccess.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ISACpp.dir/server/dbAccess.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISACpp.dir/server/dbAccess.cpp.o -c /home/olo/skola/ISACpp/server/dbAccess.cpp
 
-CMakeFiles/ISACpp.dir/dbAccess.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ISACpp.dir/dbAccess.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/olo/skola/ISACpp/dbAccess.cpp > CMakeFiles/ISACpp.dir/dbAccess.cpp.i
+CMakeFiles/ISACpp.dir/server/dbAccess.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ISACpp.dir/server/dbAccess.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/olo/skola/ISACpp/server/dbAccess.cpp > CMakeFiles/ISACpp.dir/server/dbAccess.cpp.i
 
-CMakeFiles/ISACpp.dir/dbAccess.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ISACpp.dir/dbAccess.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/olo/skola/ISACpp/dbAccess.cpp -o CMakeFiles/ISACpp.dir/dbAccess.cpp.s
+CMakeFiles/ISACpp.dir/server/dbAccess.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ISACpp.dir/server/dbAccess.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/olo/skola/ISACpp/server/dbAccess.cpp -o CMakeFiles/ISACpp.dir/server/dbAccess.cpp.s
+
+CMakeFiles/ISACpp.dir/client/main.cpp.o: CMakeFiles/ISACpp.dir/flags.make
+CMakeFiles/ISACpp.dir/client/main.cpp.o: ../client/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ISACpp.dir/client/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISACpp.dir/client/main.cpp.o -c /home/olo/skola/ISACpp/client/main.cpp
+
+CMakeFiles/ISACpp.dir/client/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ISACpp.dir/client/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/olo/skola/ISACpp/client/main.cpp > CMakeFiles/ISACpp.dir/client/main.cpp.i
+
+CMakeFiles/ISACpp.dir/client/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ISACpp.dir/client/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/olo/skola/ISACpp/client/main.cpp -o CMakeFiles/ISACpp.dir/client/main.cpp.s
+
+CMakeFiles/ISACpp.dir/client/parser/parser.cpp.o: CMakeFiles/ISACpp.dir/flags.make
+CMakeFiles/ISACpp.dir/client/parser/parser.cpp.o: ../client/parser/parser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ISACpp.dir/client/parser/parser.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISACpp.dir/client/parser/parser.cpp.o -c /home/olo/skola/ISACpp/client/parser/parser.cpp
+
+CMakeFiles/ISACpp.dir/client/parser/parser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ISACpp.dir/client/parser/parser.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/olo/skola/ISACpp/client/parser/parser.cpp > CMakeFiles/ISACpp.dir/client/parser/parser.cpp.i
+
+CMakeFiles/ISACpp.dir/client/parser/parser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ISACpp.dir/client/parser/parser.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/olo/skola/ISACpp/client/parser/parser.cpp -o CMakeFiles/ISACpp.dir/client/parser/parser.cpp.s
+
+CMakeFiles/ISACpp.dir/client/board-sender/boardSender.cpp.o: CMakeFiles/ISACpp.dir/flags.make
+CMakeFiles/ISACpp.dir/client/board-sender/boardSender.cpp.o: ../client/board-sender/boardSender.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ISACpp.dir/client/board-sender/boardSender.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISACpp.dir/client/board-sender/boardSender.cpp.o -c /home/olo/skola/ISACpp/client/board-sender/boardSender.cpp
+
+CMakeFiles/ISACpp.dir/client/board-sender/boardSender.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ISACpp.dir/client/board-sender/boardSender.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/olo/skola/ISACpp/client/board-sender/boardSender.cpp > CMakeFiles/ISACpp.dir/client/board-sender/boardSender.cpp.i
+
+CMakeFiles/ISACpp.dir/client/board-sender/boardSender.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ISACpp.dir/client/board-sender/boardSender.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/olo/skola/ISACpp/client/board-sender/boardSender.cpp -o CMakeFiles/ISACpp.dir/client/board-sender/boardSender.cpp.s
+
+CMakeFiles/ISACpp.dir/client/item-sender/itemSender.cpp.o: CMakeFiles/ISACpp.dir/flags.make
+CMakeFiles/ISACpp.dir/client/item-sender/itemSender.cpp.o: ../client/item-sender/itemSender.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ISACpp.dir/client/item-sender/itemSender.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISACpp.dir/client/item-sender/itemSender.cpp.o -c /home/olo/skola/ISACpp/client/item-sender/itemSender.cpp
+
+CMakeFiles/ISACpp.dir/client/item-sender/itemSender.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ISACpp.dir/client/item-sender/itemSender.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/olo/skola/ISACpp/client/item-sender/itemSender.cpp > CMakeFiles/ISACpp.dir/client/item-sender/itemSender.cpp.i
+
+CMakeFiles/ISACpp.dir/client/item-sender/itemSender.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ISACpp.dir/client/item-sender/itemSender.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/olo/skola/ISACpp/client/item-sender/itemSender.cpp -o CMakeFiles/ISACpp.dir/client/item-sender/itemSender.cpp.s
 
 # Object files for target ISACpp
 ISACpp_OBJECTS = \
-"CMakeFiles/ISACpp.dir/main.cpp.o" \
-"CMakeFiles/ISACpp.dir/methods.cpp.o" \
-"CMakeFiles/ISACpp.dir/socketHelper.cpp.o" \
-"CMakeFiles/ISACpp.dir/parseArgs.cpp.o" \
-"CMakeFiles/ISACpp.dir/dbAccess.cpp.o"
+"CMakeFiles/ISACpp.dir/server/main.cpp.o" \
+"CMakeFiles/ISACpp.dir/server/methods.cpp.o" \
+"CMakeFiles/ISACpp.dir/server/socketHelper.cpp.o" \
+"CMakeFiles/ISACpp.dir/server/parseArgs.cpp.o" \
+"CMakeFiles/ISACpp.dir/server/dbAccess.cpp.o" \
+"CMakeFiles/ISACpp.dir/client/main.cpp.o" \
+"CMakeFiles/ISACpp.dir/client/parser/parser.cpp.o" \
+"CMakeFiles/ISACpp.dir/client/board-sender/boardSender.cpp.o" \
+"CMakeFiles/ISACpp.dir/client/item-sender/itemSender.cpp.o"
 
 # External object files for target ISACpp
 ISACpp_EXTERNAL_OBJECTS =
 
-ISACpp: CMakeFiles/ISACpp.dir/main.cpp.o
-ISACpp: CMakeFiles/ISACpp.dir/methods.cpp.o
-ISACpp: CMakeFiles/ISACpp.dir/socketHelper.cpp.o
-ISACpp: CMakeFiles/ISACpp.dir/parseArgs.cpp.o
-ISACpp: CMakeFiles/ISACpp.dir/dbAccess.cpp.o
+ISACpp: CMakeFiles/ISACpp.dir/server/main.cpp.o
+ISACpp: CMakeFiles/ISACpp.dir/server/methods.cpp.o
+ISACpp: CMakeFiles/ISACpp.dir/server/socketHelper.cpp.o
+ISACpp: CMakeFiles/ISACpp.dir/server/parseArgs.cpp.o
+ISACpp: CMakeFiles/ISACpp.dir/server/dbAccess.cpp.o
+ISACpp: CMakeFiles/ISACpp.dir/client/main.cpp.o
+ISACpp: CMakeFiles/ISACpp.dir/client/parser/parser.cpp.o
+ISACpp: CMakeFiles/ISACpp.dir/client/board-sender/boardSender.cpp.o
+ISACpp: CMakeFiles/ISACpp.dir/client/item-sender/itemSender.cpp.o
 ISACpp: CMakeFiles/ISACpp.dir/build.make
 ISACpp: CMakeFiles/ISACpp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ISACpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/olo/skola/ISACpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable ISACpp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ISACpp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
