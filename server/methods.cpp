@@ -68,7 +68,7 @@ void servePOST(std::string request, int socket, map<string, vector<string>> &db)
             return;
         }
         if (!contentTypeTxt(request)){
-            errorNotFound(socket);
+            errorBadRequest(socket);
             cout << "Content type err\n";
             return;
         }
@@ -110,8 +110,9 @@ void servePOST(std::string request, int socket, map<string, vector<string>> &db)
             errorNotFound(socket);
             return;
         }
+        cout<<"Teraz sa rozhodne\n\n";
         if (!contentTypeTxt(request)){
-            errorNotFound(socket);
+            errorBadRequest(socket);
             cout << "Content type err\n";
             return;
         }

@@ -12,7 +12,8 @@
 
 #include "enums/enums.h"
 #include "parser/parser.h"
-#include "board-sender/boardSender.h"
+#include "board-sender/boardSender.cpp"
+#include "item-sender/itemSender.cpp"
 
 using namespace std;
 
@@ -56,7 +57,8 @@ int main(int argc, char *argv[]) {
 			n = boardSender::sendBoardRequest(sock,arg);
 			break; //optional
 		case ITEM:
-
+			n = itemSender::sendItemRequest(sock,arg);
+			break;
 		default : //Optional
 			cout<<"Error switch in main!";
 			return -1;

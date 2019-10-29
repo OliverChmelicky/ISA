@@ -60,12 +60,24 @@ bool contentTypeTxt(string request) {
     string delimiter = "\n";
     bool occuredOnce = false;
 
+    cout<<"jebem"<<endl;
+    int i = 0;
+
     while ((pos = request.find(delimiter)) != std::string::npos) {
+    	i ++;
         header = request.substr(0, pos);
         header = removeSpaces(header);
         std::string headerName = header.substr(0, 13);
 
+		cout<< "headder is:"<<endl;
+		cout<< header<<endl;
+		cout<<headerName<<endl;
+
         if (headerName == "Content-Type:") {                //can be many "Content-Type:text/plain" but no other
+        	cout<<"SOM DNU\n\n";
+			for (int i = 0; i < header.size(); i++) {
+				cout << int(header[i]) << endl;
+			}
             if (header != "Content-Type:text/plain\r") {
                 return false;
             }
@@ -75,6 +87,7 @@ bool contentTypeTxt(string request) {
         request.erase(0, pos + delimiter.length());
     }
 
+    cout<<i<<endl;
     return occuredOnce;
 }
 

@@ -1,5 +1,5 @@
 //
-// Created by olo on 28.10.19.
+// Created by xchmel28 on 28.10.19.
 //
 
 #include <iostream>
@@ -8,30 +8,28 @@
 #include "boardSender.h"
 
 int boardSender::sendBoardRequest(int socket, const arguments& data) {
-    if (data.commandType == BOARDS){
-		std::ostringstream request;
+
+	std::ostringstream request;
+	if (data.commandType == BOARDS) {
 		request << "GET /boards HTTP/1.1" <<"\n\n"<<"";
 		return write(socket, request.str().data(), request.str().length() );
-
     }
-    else{
+    else {
         switch(data.commandOperation) {
-            case ADD  :
-
-                break; //optional
-            case DELETE  :
-
-                break; //optional
+			case ADD  :
+				request << "POST /board/"<< data.boardName << " HTTP/1.1\r\nContent-Type: text/plain\r\nContent-Length: " <<data.boardName.length()<< "\r\n\r\n"<< data.boardName <<"";
+				return write(socket, request.str().data(), request.str().length() );
+			case DELETE  :
+				request << "DELETE /board/"<< data.boardName<< " HTTP/1.1\r\nContent-Length: 0\r\n\r\n";
+				return write(socket, request.str().data(), request.str().length() );
             case LIST  :
-                // you can have any number of case statements.
-                break;
+				request << "GET /board/"<< data.boardName<< " HTTP/1.1\r\nContent-Length: 0\r\n\r\n";
+				return write(socket, request.str().data(), request.str().length() );
             default : //Optional
-                cout<< "Error parsing arguments"<<endl;
-                //som v pici
+                cout<< "Error switch board sender"<<endl;
+                return -1;
         }
     }
 
-
-
-    return 0;
+    return -1;
 }
