@@ -17,10 +17,10 @@ int boardSender::sendBoardRequest(int socket, const arguments& data) {
     else {
         switch(data.commandOperation) {
 			case ADD  :
-				request << "POST /board/"<< data.boardName << " HTTP/1.1\r\nContent-Type: text/plain\r\nContent-Length: " <<data.boardName.length()<< "\r\n\r\n"<< data.boardName <<"";
+				request << "POST /boards/"<< data.boardName << " HTTP/1.1\r\nContent-Type: text/plain\r\nContent-Length: " <<data.boardName.length()<< "\r\n\r\n"<< data.boardName <<"";
 				return write(socket, request.str().data(), request.str().length() );
 			case DELETE  :
-				request << "DELETE /board/"<< data.boardName<< " HTTP/1.1\r\nContent-Length: 0\r\n\r\n";
+				request << "DELETE /boards/"<< data.boardName<< " HTTP/1.1\r\nContent-Length: 0\r\n\r\n";
 				return write(socket, request.str().data(), request.str().length() );
             case LIST  :
 				request << "GET /board/"<< data.boardName<< " HTTP/1.1\r\nContent-Length: 0\r\n\r\n";

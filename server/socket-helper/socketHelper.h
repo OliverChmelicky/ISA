@@ -2,24 +2,15 @@
 // Created by olo on 19.10.19.
 //
 #include <string>
-#include "enums.h"
+#include "../enums/enums.h"
+#include "../structures/structures.h"
 
 #ifndef ISA_SOCKETHELPER_H
 #define ISA_SOCKETHELPER_H
 
-struct URL {
-    std::string type;
-    std::string name;
-    int id;
-};
-
+int serveUnsupported(int socket);
 requestMethod getMethod(std::string);
 std::string getUnparsedURL(std::string*);
-//URL getParsedURL(std::string*);
-URL parseUrlGET(std::string*);
-URL parseUrlPOST(std::string*);
-URL parseUrlPUT(std::string*);
-URL parseUrlDELETE(std::string*);
 std::string removeSpaces(std::string);
 int convertToInt(std::string);
 bool contentTypeTxt(std::string);

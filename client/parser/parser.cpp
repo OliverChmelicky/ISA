@@ -142,5 +142,11 @@ int parser::stringToInt(string convert) {
 bool parser::regexOnBoard(const string &check) {
     const std::regex re( "[a-zA-Z0-9]*" ) ;
     std::smatch match ;
-    return std::regex_match(check, match, re);
+    bool result;
+    result = std::regex_match(check, match, re);
+    if (!result){
+    	cout<<"Error regex in boarname\n";
+		return false;
+    }
+	return true;
 };

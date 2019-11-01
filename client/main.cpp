@@ -12,8 +12,8 @@
 
 #include "enums/enums.h"
 #include "parser/parser.h"
-#include "board-sender/boardSender.cpp"
-#include "item-sender/itemSender.cpp"
+#include "board-sender/boardSender.h"
+#include "item-sender/itemSender.h"
 
 using namespace std;
 
@@ -24,8 +24,7 @@ int main(int argc, char *argv[]) {
     //checkni id ci je cislo a prejdi regexom boarName
 
     if (arg.errorCode != 0 ){
-        cout<< "ERROR:: ";
-        cout<<arg.errorCode <<endl;
+        cout<< "Error parsing arguments\n";
         return 1;
     }
 

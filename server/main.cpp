@@ -1,16 +1,20 @@
 
 #include <sys/socket.h>
 #include <unistd.h>
-#include <stdlib.h>
+#include <cstdlib>
 #include <netinet/in.h>
-#include <string.h>
-#include <errno.h>
+#include <cstring>
+#include <cerrno>
 #include <iostream>
 #include <vector>
-#include "parseArgs.h"
-#include "enums.h"
-#include "socketHelper.h"
-#include "methods.h"
+
+#include "argument-parser/parseArgs.h"
+#include "handlers/get/getHandler.h"
+#include "handlers/post/postHandler.h"
+#include "handlers/put/putHandler.h"
+#include "handlers/delete/deleteHandler.h"
+#include "enums/enums.h"
+#include "socket-helper/socketHelper.h"
 
 
 using namespace std;
@@ -87,15 +91,25 @@ int main(int argc, char *argv[]) {
         requestMethod method = getMethod(request);
 
         if (method == GET) {
-            serveGET(request, new_socket, db);
+             if ( getHandler::serve(request, new_socket, db) < 0 ){
+				 cout<<"Error serving request\n";
+             }
         } else if (method == POST) {
-            servePOST(request, new_socket, db);
+             if ( postHandler::serve(request, new_socket, db) <= 0 ){
+				 cout<<"Error serving request\n";
+             }
         } else if (method == PUT) {
-            servePUT(request, new_socket, db);
+            if ( putHandler::serve(request, new_socket, db) <= 0 ){
+				cout<<"Error serving request\n";
+            }
         } else if (method == DELETE) {
-            serveDELETE(request, new_socket, db);
+            if ( deleteHandler::serve(request, new_socket, db) < 0 ){
+				cout<<"Error serving request\n";
+            }
         } else {
-            serveUNSUPPORTED(new_socket);
+			if ( serveUnsupported(new_socket) < 0 ) {
+				cout<<"Error serving request\n";
+			}
         }
 
         cout<< "\n\n";
@@ -106,8 +120,8 @@ int main(int argc, char *argv[]) {
 
         //pories free ak bude viac krat potrebne citat
         std::fill_n(request, BUFSIZ, 0);
-        //mozno lepsie (otestuj):
-        //bzero(buffer,BUFSIZ);
+        //NOVINKA, hore je stare:
+        //bzero(request,BUFSIZ);
         close(new_socket);
     }
     return 0;

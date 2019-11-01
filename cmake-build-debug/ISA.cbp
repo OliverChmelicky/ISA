@@ -106,31 +106,67 @@
 		<Unit filename="/home/olo/skola/ISACpp/client/parser/parser.h">
 			<Option target="ISACpp"/>
 		</Unit>
-		<Unit filename="/home/olo/skola/ISACpp/server/dbAccess.cpp">
+		<Unit filename="/home/olo/skola/ISACpp/server/argument-parser/parseArgs.cpp">
 			<Option target="ISACpp"/>
 		</Unit>
-		<Unit filename="/home/olo/skola/ISACpp/server/dbAccess.h">
+		<Unit filename="/home/olo/skola/ISACpp/server/argument-parser/parseArgs.h">
+			<Option target="ISACpp"/>
+		</Unit>
+		<Unit filename="/home/olo/skola/ISACpp/server/db-access/dbAccess.cpp">
+			<Option target="ISACpp"/>
+		</Unit>
+		<Unit filename="/home/olo/skola/ISACpp/server/db-access/dbAccess.h">
+			<Option target="ISACpp"/>
+		</Unit>
+		<Unit filename="/home/olo/skola/ISACpp/server/errors/errors.cpp">
+			<Option target="ISACpp"/>
+		</Unit>
+		<Unit filename="/home/olo/skola/ISACpp/server/errors/errors.h">
+			<Option target="ISACpp"/>
+		</Unit>
+		<Unit filename="/home/olo/skola/ISACpp/server/handlers/base-handler/base.cpp">
+			<Option target="ISACpp"/>
+		</Unit>
+		<Unit filename="/home/olo/skola/ISACpp/server/handlers/base-handler/base.h">
+			<Option target="ISACpp"/>
+		</Unit>
+		<Unit filename="/home/olo/skola/ISACpp/server/handlers/delete/deleteHandler.cpp">
+			<Option target="ISACpp"/>
+		</Unit>
+		<Unit filename="/home/olo/skola/ISACpp/server/handlers/delete/deleteHandler.h">
+			<Option target="ISACpp"/>
+		</Unit>
+		<Unit filename="/home/olo/skola/ISACpp/server/handlers/get/getHandler.cpp">
+			<Option target="ISACpp"/>
+		</Unit>
+		<Unit filename="/home/olo/skola/ISACpp/server/handlers/get/getHandler.h">
+			<Option target="ISACpp"/>
+		</Unit>
+		<Unit filename="/home/olo/skola/ISACpp/server/handlers/post/postHandler.cpp">
+			<Option target="ISACpp"/>
+		</Unit>
+		<Unit filename="/home/olo/skola/ISACpp/server/handlers/post/postHandler.h">
+			<Option target="ISACpp"/>
+		</Unit>
+		<Unit filename="/home/olo/skola/ISACpp/server/handlers/put/putHandler.cpp">
+			<Option target="ISACpp"/>
+		</Unit>
+		<Unit filename="/home/olo/skola/ISACpp/server/handlers/put/putHandler.h">
 			<Option target="ISACpp"/>
 		</Unit>
 		<Unit filename="/home/olo/skola/ISACpp/server/main.cpp">
 			<Option target="ISACpp"/>
 		</Unit>
-		<Unit filename="/home/olo/skola/ISACpp/server/methods.cpp">
+		<Unit filename="/home/olo/skola/ISACpp/server/socket-helper/socketHelper.cpp">
 			<Option target="ISACpp"/>
 		</Unit>
-		<Unit filename="/home/olo/skola/ISACpp/server/methods.h">
+		<Unit filename="/home/olo/skola/ISACpp/server/socket-helper/socketHelper.h">
 			<Option target="ISACpp"/>
 		</Unit>
-		<Unit filename="/home/olo/skola/ISACpp/server/parseArgs.cpp">
+		<Unit filename="/home/olo/skola/ISACpp/server/structures/structures.cpp">
 			<Option target="ISACpp"/>
 		</Unit>
-		<Unit filename="/home/olo/skola/ISACpp/server/parseArgs.h">
-			<Option target="ISACpp"/>
-		</Unit>
-		<Unit filename="/home/olo/skola/ISACpp/server/socketHelper.cpp">
-			<Option target="ISACpp"/>
-		</Unit>
-		<Unit filename="/home/olo/skola/ISACpp/server/socketHelper.h">
+		<Unit filename="/home/olo/skola/ISACpp/server/structures/structures.h">
 			<Option target="ISACpp"/>
 		</Unit>
 		<Unit filename="/home/olo/skola/ISACpp/CMakeLists.txt">
