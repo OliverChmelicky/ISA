@@ -14,10 +14,22 @@
 #include "parser/parser.h"
 #include "board-sender/boardSender.h"
 #include "item-sender/itemSender.h"
+#include "../server/structures/structures.h"
 
 using namespace std;
 
 int connectToServer(int& socket, struct sockaddr_in& server, const string& host, int port);
+body readBody(const string& answer);
+
+string convertToString(char* a, int size)
+{
+	int i;
+	string s;
+	for (i = 0; i < size; i++) {
+		s = s + a[i];
+	}
+	return s;
+}
 
 int main(int argc, char *argv[]) {
     arguments arg = parser::parse(argc,argv);
@@ -76,39 +88,25 @@ int main(int argc, char *argv[]) {
         cout<<"ERROR reading socket\n"<<endl;
         return -1;
     }
-    printf("%s\n", buffer);
+
+	int size = sizeof(buffer) / sizeof(char);
+	string bufferS = convertToString(buffer, size);
+
+	body answer;
+    answer = readBody(bufferS);
+
+	if (answer.errCode == 0){
+		cout<<answer.content<<endl;
+	}
+//	else{
+//		cout<<"Error reading body:\n";
+//		printf("%s\n", buffer);
+//		cout<<"von";
+//	}
 
     close(sock);
 
-    //end of source
-
-//
-//    cout<< "HOSTNAME: ";
-//    cout<<arg.host <<endl;
-//
-//    cout<< "PORT: ";
-//    cout<<arg.port <<endl;
-//
-//    cout<< "TYPE: ";
-//    cout<<arg.commandType <<endl;
-//
-//    cout<< "METHOD: ";
-//    cout<<arg.commandOperation <<endl;
-//
-//    cout<< "CONTENT: ";
-//    cout<<arg.content.data() <<endl;
-//
-//    cout<< "ID: ";
-//    cout<<arg.id <<endl;
-//
-//    cout<< "BOARDNAME: ";
-//    cout<<arg.boardName.data() <<endl;
-//
-//
-//
-
-    return 0;
-
+	return 0;
 }
 
 int connectToServer(int& socket, struct sockaddr_in& server, const string& hostDomain, int port){
@@ -126,13 +124,6 @@ int connectToServer(int& socket, struct sockaddr_in& server, const string& hostD
 	server.sin_family = AF_INET;
 	server.sin_port = htons(port);
 
-	// Print a resolved address of server (the first IP of the host)
-	std::cout << "server address = " << (host->h_addr_list[0][0] & 0xff) << "." <<
-			  (host->h_addr_list[0][1] & 0xff) << "." <<
-			  (host->h_addr_list[0][2] & 0xff) << "." <<
-			  (host->h_addr_list[0][3] & 0xff) << ", port " <<
-			  static_cast<int>(port) << std::endl;
-
 	// Write resolved IP address of a server to the address structure
 	memmove(&(server.sin_addr.s_addr), host->h_addr_list[0], 4);
 
@@ -144,7 +135,28 @@ int connectToServer(int& socket, struct sockaddr_in& server, const string& hostD
 		return -1;
 	}
 
-	std::cout << "Connected!" << std::endl;
 	return 0;
+}
 
+body readBody(const string& answer) {
+	int from = answer.find(' ');
+	int to = answer.find('\r');
+	std::string headder = answer.substr(answer.find(' '), to-from);
+
+	std::string bodyString;
+	string delimiter = "\r\n\r\n";
+	struct body bodyToReturn;
+
+	size_t pos = 0;
+	pos = answer.find(delimiter);
+	pos += 4;
+	if (pos > answer.size()){
+		bodyToReturn.errCode = 1;
+		return bodyToReturn;
+	}
+
+	bodyToReturn.errCode = 0;
+	bodyToReturn.content = headder.append("\n" + answer.substr(pos, answer.size()));
+
+	return bodyToReturn;
 }

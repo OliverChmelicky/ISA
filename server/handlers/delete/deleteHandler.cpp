@@ -14,8 +14,8 @@
 
 using namespace std;
 
-int deleteHandler::serve(std::string request, int socket, std::map<std::string, std::vector<std::string>> &db) {
-	std::string answ = "HTTP/1.1 500 Internal Server Error\nContent-Length: 0\n\n";
+int deleteHandler::serve(const std::string& request, int socket, std::map<std::string, std::vector<std::string>> &db) {
+	std::string answ = "HTTP/1.1 500 Internal Server Error\r\nContent-Length: 0\r\n\r\n";
 	std::string firstLine = request.substr(0, request.find('\n'));
 	URL query = deleteHandler::parseURL(&firstLine);
 
@@ -28,7 +28,7 @@ int deleteHandler::serve(std::string request, int socket, std::map<std::string, 
 			cout<< "Board does not exist\n";
 			return errors::sendErrorNotFound(socket);
 		}
-		answ = "HTTP/1.1 200 OK\nContent-Length: 0\n\n";
+		answ = "HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n";
 	}
 	if (query.type == "board") {
 		if (query.name.empty()){
@@ -38,7 +38,7 @@ int deleteHandler::serve(std::string request, int socket, std::map<std::string, 
 			cout<< "Board does not exist or id is not in range\n";
 			return errors::sendErrorNotFound(socket);
 		}
-		answ = "HTTP/1.1 200 OK\nContent-Length: 0\n\n";
+		answ = "HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n";
 	}
 
 	return write(socket, answ.data(), answ.length() );

@@ -15,6 +15,7 @@
 #include "handlers/delete/deleteHandler.h"
 #include "enums/enums.h"
 #include "socket-helper/socketHelper.h"
+#include "errors/errors.h"
 
 
 using namespace std;
@@ -88,6 +89,14 @@ int main(int argc, char *argv[]) {
         read(new_socket, request, BUFSIZ);
         printf("%s\n", request);
 
+
+		if (checkProtocol(request) != 0){
+			errors::sendErrorBadRequest(new_socket);
+			close(new_socket);
+			cout<<"CYBA";
+			continue;
+		}
+
         requestMethod method = getMethod(request);
 
         if (method == GET) {
@@ -120,8 +129,6 @@ int main(int argc, char *argv[]) {
 
         //pories free ak bude viac krat potrebne citat
         std::fill_n(request, BUFSIZ, 0);
-        //NOVINKA, hore je stare:
-        //bzero(request,BUFSIZ);
         close(new_socket);
     }
     return 0;

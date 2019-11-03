@@ -11,7 +11,7 @@
 
 class getHandler: Base {
 public:
-	static int serve(std::string, int, std::map<std::string, std::vector<std::string>> &db);
+	static int serve(const std::string&, int, std::map<std::string, std::vector<std::string>> &db);
 	static URL parseURL(std::string*);
 };
 

@@ -9,13 +9,13 @@
 #define ISA_SOCKETHELPER_H
 
 int serveUnsupported(int socket);
-requestMethod getMethod(std::string);
-std::string getUnparsedURL(std::string*);
+requestMethod getMethod(const std::string&);
 std::string removeSpaces(std::string);
 int convertToInt(std::string);
 bool contentTypeTxt(std::string);
 int contentLength(std::string);
 std::string trim(const std::string&);
+int checkProtocol(const std::string& request);
 
 
 

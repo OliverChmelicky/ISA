@@ -4,3 +4,6 @@ LIBOBJ=main.o parser/parser.o item-sender/itemSender.o board-sender/boardSender.
 
 all: $(LIBOBJ)
 	$(CXX) $(CXXFLAGS) $(LIBOBJ) -o isaclient
+
+clean:
+	find . -name "*.o" -type f -delete

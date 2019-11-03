@@ -18,7 +18,6 @@ int parsePort(int argc, char *argv[]){
         switch(opt)
         {
             case 'p':
-                printf("option has a value %s\n", optarg);
                 char *endPtr;
                 long port;
                 port = strtol(optarg,&endPtr,10);

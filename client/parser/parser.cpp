@@ -13,7 +13,7 @@ arguments parser::parse(int argc, char **argv) {
     arguments retval;
     retval.errorCode = 0;
 
-    if (argc < 6 || argc > 9) {
+    if (argc < 6 || argc > 10) {
         retval.errorCode = -1;
         return retval;
     }
@@ -92,26 +92,35 @@ arguments parser::parse(int argc, char **argv) {
                     }
                     retval.id = idInt;
                 }
-                else if (0 == strcmp(argv[i+1], "update")){
-                    retval.commandType = ITEM;
-                    retval.commandOperation = UPDATE;
-                    retval.boardName = argv[i+2];
-                    int idInt = parser::stringToInt(argv[i+3]);
-                    if ( idInt < 0 ){
-                        retval.errorCode = -1;
-                        return retval;
-                    }
-                    retval.id = idInt;
-                }
                 else{
                     retval.errorCode = -1;
                     return retval;
                 }
+
                 if (!parser::regexOnBoard(retval.boardName)){
                     retval.errorCode = -1;
                 }
                 return retval;
 
+            }
+            else if ( 0 == strcmp(argv[i],"item") && argc == 10){
+				if (0 == strcmp(argv[i+1], "update")){
+					retval.commandType = ITEM;
+					retval.commandOperation = UPDATE;
+					retval.boardName = argv[i+2];
+					retval.content = argv[i+4];
+					int idInt = parser::stringToInt(argv[i+3]);
+					if ( idInt < 0 ){
+						retval.errorCode = -1;
+						return retval;
+					}
+					retval.id = idInt;
+				}
+				else{
+					retval.errorCode = -1;
+					return retval;
+				}
+				return retval;
             }
             else {
                 retval.errorCode = -1;

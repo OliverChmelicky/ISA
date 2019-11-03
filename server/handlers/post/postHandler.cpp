@@ -14,7 +14,7 @@
 using namespace std;
 
 int postHandler::serve(std::string request, int socket, std::map<std::string, std::vector<std::string>> &db) {
-	std::string answ = "HTTP/1.1 500 Internal Server Error\nContent-Length: 0\n\n";
+	std::string answ = "HTTP/1.1 500 Internal Server Error\r\nContent-Length: 0\r\n\r\n";
 	std::string firstLine = request.substr(0, request.find('\n'));
 	URL query = postHandler::parseURL(&firstLine);
 	int length;
@@ -54,13 +54,12 @@ int postHandler::serve(std::string request, int socket, std::map<std::string, st
 			return errors::sendErrorExists(socket);
 		}
 
-		answ = "HTTP/1.1 201 Created\nContent-Length: 0\n\n";
+		answ = "HTTP/1.1 201 Created\r\nContent-Length: 0\r\n\r\n";
 	}
 	else if (query.type == "board") {
 		if (query.name.empty()){
 			return errors::sendErrorNotFound(socket);
 		}
-		cout<<"Teraz sa rozhodne\n\n";
 		if (!contentTypeTxt(request)){
 			cout << "Content type err\n";
 			return errors::sendErrorBadRequest(socket);
@@ -80,7 +79,7 @@ int postHandler::serve(std::string request, int socket, std::map<std::string, st
 			cout<< "Board does not exist\n";
 			return errors::sendErrorNotFound(socket);
 		}
-		answ = "HTTP/1.1 201 Created\nContent-Length: 0\n\n";
+		answ = "HTTP/1.1 201 Created\r\nContent-Length: 0\r\n\r\n";
 	}
 
 	return write(socket, answ.data(), answ.length() );

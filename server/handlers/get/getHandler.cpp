@@ -17,30 +17,29 @@
 
 using namespace std;
 
-int getHandler::serve(std::string request, int socket, std::map<std::string, std::vector<std::string>> &db) {
+int getHandler::serve(const std::string& request, int socket, std::map<std::string, std::vector<std::string>> &db) {
+	std::string firstLine = request.substr(0, request.find('\n'));
+	URL querry = getHandler::parseURL(&firstLine);
 
-		std::string firstLine = request.substr(0, request.find('\n'));
-		URL querry = getHandler::parseURL(&firstLine);
+	if (querry.type == "boards"){
+		string allBoards;
+		getBoards(db,allBoards);
+		std::ostringstream answ;
+		answ << "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: " <<allBoards.length()<<"\r\n\r\n"<< allBoards<<"";
+		return write(socket, answ.str().data(), answ.str().length() );
 
-		if (querry.type == "boards"){
-			string allBoards;
-			getBoards(db,allBoards);
-			std::ostringstream answ;
-			answ << "HTTP/1.1 200 OK\nContent-Type: text/plain\nContent-Length: " <<allBoards.length()<<"\n\n"<< allBoards<<"";
-			return write(socket, answ.str().data(), answ.str().length() );
-
+	}
+	else if (querry.type == "board"){
+		//check ci board/name existuje a vrat
+		string posts;
+		if (0 != getPosts(db, querry.name,posts)){
+			cout << "Board was not found\n";
+			return errors::sendErrorNotFound(socket);
 		}
-		else if (querry.type == "board"){
-			//check ci board/name existuje a vrat
-			string posts;
-			if (0 != getPosts(db, querry.name,posts)){
-				cout << "Board was not found\n";
-				return errors::sendErrorNotFound(socket);
-			}
-			std::ostringstream answ;
-			answ << "HTTP/1.1 200 OK\nContent-Type: text/plain\nContent-Length: " <<posts.length()<<"\n\n"<< posts<<"";
-			return write(socket, answ.str().data(), answ.str().length() );
-		}
+		std::ostringstream answ;
+		answ << "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: " <<posts.length()<<"\r\n\r\n"<< posts<<"";
+		return write(socket, answ.str().data(), answ.str().length() );
+	}
 
 	return errors::sendErrorNotFound(socket);
 

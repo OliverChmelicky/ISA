@@ -14,7 +14,7 @@ const std::string WHITESPACE = " \n\r\t\f\v";
 
 
 int serveUnsupported(int socket){
-	std::string answ = "HTTP/1.1 405 Method Not Allowed\nContent-Length: 0\n\n";
+	std::string answ = "HTTP/1.1 405 Method Not Allowed\r\nContent-Length: 0\r\n\r\n";
 	return write(socket, answ.data(), answ.length());
 }
 
@@ -31,6 +31,7 @@ string rtrim(const std::string &s) {
 string trim(const std::string &s) {
     return rtrim(ltrim(s));
 }
+
 
 int convertToInt(string toConvert) {
     int i = 0;
@@ -128,8 +129,22 @@ int contentLength(string request) {
     return number;
 }
 
+int checkProtocol(const string& request){
+	string delimiter = "\r";
+	std::string headder = request.substr(0, request.find(delimiter));
 
-requestMethod getMethod(string request) {
+	string preprocessed = headder.substr(headder.find(' '), headder.length());
+
+	string protocol = preprocessed.substr(preprocessed.find(" H"), preprocessed.length());
+
+	if (protocol == " HTTP/1.1"){
+		return 0;
+	}
+
+	return -1;
+}
+
+requestMethod getMethod(const string& request) {
     if (request.size() >= 6) {
         string method = request.substr(0, request.find(' '));
         int i = method.compare("GET");

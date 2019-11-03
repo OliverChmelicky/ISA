@@ -11,7 +11,7 @@ int boardSender::sendBoardRequest(int socket, const arguments& data) {
 
 	std::ostringstream request;
 	if (data.commandType == BOARDS) {
-		request << "GET /boards HTTP/1.1" <<"\n\n"<<"";
+		request << "GET /boards HTTP/1.1" <<"\r\n"<<"";
 		return write(socket, request.str().data(), request.str().length() );
     }
     else {
