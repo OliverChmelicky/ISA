@@ -14,7 +14,7 @@ const std::string WHITESPACE = " \n\r\t\f\v";
 
 
 int serveUnsupported(int socket){
-	std::string answ = "HTTP/1.1 405 Method Not Allowed\r\nContent-Length: 0\r\n\r\n";
+	std::string answ = "HTTP/1.1 404 Bad Request\r\nContent-Length: 0\r\n\r\n";
 	return write(socket, answ.data(), answ.length());
 }
 

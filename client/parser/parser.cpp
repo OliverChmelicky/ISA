@@ -13,6 +13,11 @@ arguments parser::parse(int argc, char **argv) {
     arguments retval;
     retval.errorCode = 0;
 
+	if (argc == 2 && (0 == strcmp(argv[1], "-h")) ){
+		std::cout << "Usage:  ./isaclient -H <host> -p <port> <command>\n";
+		retval.errorCode = 6378;
+		return retval;
+	}
     if (argc < 6 || argc > 10) {
         retval.errorCode = -1;
         return retval;

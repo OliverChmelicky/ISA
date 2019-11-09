@@ -13,7 +13,7 @@
 
 using namespace std;
 
-int putHandler::serve(std::string request, int socket, map<string, vector<string>> &db){
+int putHandler::serve(const string& request, int socket, map<string, vector<string>> &db){
 	std::string answ = "HTTP/1.1 500 Internal Server Error\r\nContent-Length: 0\r\n\r\n";
 	std::string firstLine = request.substr(0, request.find('\n'));
 	URL query = parseUrl(&firstLine);

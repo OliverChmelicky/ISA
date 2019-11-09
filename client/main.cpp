@@ -16,26 +16,21 @@
 #include "item-sender/itemSender.h"
 #include "../server/structures/structures.h"
 
+#define HELP 6378
+
 using namespace std;
 
 int connectToServer(int& socket, struct sockaddr_in& server, const string& host, int port);
 body readBody(const string& answer);
-
-string convertToString(char* a, int size)
-{
-	int i;
-	string s;
-	for (i = 0; i < size; i++) {
-		s = s + a[i];
-	}
-	return s;
-}
+string convertToString(char* a, int size);
 
 int main(int argc, char *argv[]) {
     arguments arg = parser::parse(argc,argv);
-    //checkni id ci je cislo a prejdi regexom boarName
 
-    if (arg.errorCode != 0 ){
+    if (arg.errorCode == HELP){
+		return 0;
+    }
+    else if (arg.errorCode != 0 ){
         cout<< "Error parsing arguments\n";
         return 1;
     }
@@ -98,16 +93,20 @@ int main(int argc, char *argv[]) {
 	if (answer.errCode == 0){
 		cout<<answer.content<<endl;
 	}
-//	else{
-//		cout<<"Error reading body:\n";
-//		printf("%s\n", buffer);
-//		cout<<"von";
-//	}
+	else{
+		cout<<"Error reading body:\n";
+		printf("%s\n", buffer);
+	}
 
     close(sock);
 
 	return 0;
 }
+
+
+
+
+
 
 int connectToServer(int& socket, struct sockaddr_in& server, const string& hostDomain, int port){
 	char cstr[hostDomain.length() + 1];
@@ -159,4 +158,15 @@ body readBody(const string& answer) {
 	bodyToReturn.content = headder.append("\n" + answer.substr(pos, answer.size()));
 
 	return bodyToReturn;
+}
+
+
+string convertToString(char* a, int size)
+{
+	int i;
+	string s;
+	for (i = 0; i < size; i++) {
+		s = s + a[i];
+	}
+	return s;
 }

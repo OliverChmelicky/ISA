@@ -1,14 +1,21 @@
 //
-// Created by olo on 19.10.19.
+// Created by xchmel28 on 19.10.19.
 //
 
 #include <cstdio>
 #include <unistd.h>
 #include <cstdlib>
+#include <iostream>
+#include <cstring>
 #include "parseArgs.h"
 
 int parsePort(int argc, char *argv[]){
-    int opt;
+    if (argc == 2 && (0 == strcmp(argv[1], "-h")) ){
+    	std::cout << "Usage:  ./isaserver -p <port>\n";
+    	exit(0);
+    }
+
+	int opt;
     if (argc != 3) {
         return -1;
     }
