@@ -67,11 +67,13 @@ int main(int argc, char *argv[]) {
 			break;
 		default : //Optional
 			cout<<"Error switch in main!";
+			close(sock);
 			return -1;
 	}
 
 	if (n < 0) {
 		cout<<"Error sending request!";
+		close(sock);
 		return -1;
 	}
 
@@ -81,6 +83,7 @@ int main(int argc, char *argv[]) {
     n = read(sock, buffer, BUFSIZ);
     if (n < 0){
         cout<<"ERROR reading socket\n"<<endl;
+		close(sock);
         return -1;
     }
 
@@ -150,7 +153,7 @@ body readBody(const string& answer) {
 	pos = answer.find(delimiter);
 	pos += 4;
 	if (pos > answer.size()){
-		bodyToReturn.errCode = 1;
+		bodyToReturn.errCode = -1;
 		return bodyToReturn;
 	}
 
