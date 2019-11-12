@@ -1,5 +1,7 @@
 **Preklad servera a clienta v domovskom adresári projektu:**
-"make"
+```
+make
+```
 
 **Štart servera:**
 ```
