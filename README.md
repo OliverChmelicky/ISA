@@ -19,9 +19,8 @@ make clean
 ```
 Klient po získaní odpovede vypíše _status code_, _status message_ a _body_ odpovede.
 
-**Obmädzenia:**
-
-Server prijíma requesty s maximálnou dĺžkou buffru BUFSIZ.
-Server nepodporuje Transfer-Encoding: chunked.
-Server po obslúžení socket uzavrie ( Connection : keep-alive nie je podporované ).
-Metódy POST a PUT vyžadujú Content-Length väčšie ako 0, inak server vráti error.
+**Obmädzenia:**<br/>
+Server prijíma requesty s maximálnou dĺžkou buffru BUFSIZ.<br/>
+Server nepodporuje Transfer-Encoding: chunked.<br/>
+Server po obslúžení socket uzavrie ( Connection : keep-alive nie je podporované ).<br/>
+Metódy POST a PUT vyžadujú Content-Length väčšie ako 0, inak server vráti error.<br/>
