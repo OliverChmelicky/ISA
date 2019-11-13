@@ -14,7 +14,7 @@
 using namespace std;
 
 int postHandler::serve(const std::string& request, int socket, std::map<std::string, std::vector<std::string>> &db) {
-	std::string answ = "HTTP/1.1 500 Internal Server Error\r\nContent-Length: 0\r\n\r\n";
+	std::string answ = "HTTP/1.1 404 Not Found\r\nContent-Length: 0\r\n\r\n";
 	std::string firstLine = request.substr(0, request.find('\n'));
 	URL query = postHandler::parseURL(&firstLine);
 	int length;
@@ -28,6 +28,7 @@ int postHandler::serve(const std::string& request, int socket, std::map<std::str
 			cout << "Content type err\n";
 			return errors::sendErrorBadRequest(socket);
 		}
+
 		length = contentLength(request);
 		if (length <= 0){
 			cout << "Length err\n";
@@ -64,6 +65,7 @@ int postHandler::serve(const std::string& request, int socket, std::map<std::str
 			cout << "Content type err\n";
 			return errors::sendErrorBadRequest(socket);
 		}
+
 		length = contentLength(request);
 		if (length <= 0){
 			cout << "Length err\n";

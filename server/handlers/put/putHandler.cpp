@@ -14,7 +14,7 @@
 using namespace std;
 
 int putHandler::serve(const string& request, int socket, map<string, vector<string>> &db){
-	std::string answ = "HTTP/1.1 500 Internal Server Error\r\nContent-Length: 0\r\n\r\n";
+	std::string answ = "HTTP/1.1 404 Not Found\r\nContent-Length: 0\r\n\r\n";
 	std::string firstLine = request.substr(0, request.find('\n'));
 	URL query = parseUrl(&firstLine);
 	int length;
@@ -27,9 +27,10 @@ int putHandler::serve(const string& request, int socket, map<string, vector<stri
 			cout << "Content type err\n";
 			return errors::sendErrorNotFound(socket);
 		}
+
 		length = contentLength(request);
-		cout << "Length err\n";
 		if (length <= 0){
+			cout << "Length err\n";
 			return errors::sendErrorBadRequest(socket);
 		}
 

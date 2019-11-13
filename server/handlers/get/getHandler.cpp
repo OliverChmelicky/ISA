@@ -30,7 +30,6 @@ int getHandler::serve(const std::string& request, int socket, std::map<std::stri
 
 	}
 	else if (querry.type == "board"){
-		//check ci board/name existuje a vrat
 		string posts;
 		if (0 != getPosts(db, querry.name,posts)){
 			cout << "Board was not found\n";

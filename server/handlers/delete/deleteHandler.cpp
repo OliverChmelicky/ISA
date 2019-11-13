@@ -15,7 +15,7 @@
 using namespace std;
 
 int deleteHandler::serve(const std::string& request, int socket, std::map<std::string, std::vector<std::string>> &db) {
-	std::string answ = "HTTP/1.1 500 Internal Server Error\r\nContent-Length: 0\r\n\r\n";
+	std::string answ = "HTTP/1.1 404 Not Found\r\nContent-Length: 0\r\n\r\n";
 	std::string firstLine = request.substr(0, request.find('\n'));
 	URL query = deleteHandler::parseURL(&firstLine);
 

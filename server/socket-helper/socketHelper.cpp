@@ -57,7 +57,6 @@ bool contentTypeTxt(string request) {
     string delimiter = "\n";
     bool occuredOnce = false;
 
-    cout<<"jebem"<<endl;
     int i = 0;
 
     while ((pos = request.find(delimiter)) != std::string::npos) {
@@ -66,25 +65,15 @@ bool contentTypeTxt(string request) {
         header = removeSpaces(header);
         std::string headerName = header.substr(0, 13);
 
-		cout<< "headder is:"<<endl;
-		cout<< header<<endl;
-		cout<<headerName<<endl;
-
         if (headerName == "Content-Type:") {                //can be many "Content-Type:text/plain" but no other
-        	cout<<"SOM DNU\n\n";
-			for (int i = 0; i < header.size(); i++) {
-				cout << int(header[i]) << endl;
-			}
             if (header != "Content-Type:text/plain\r") {
                 return false;
             }
             occuredOnce = true;
         }
-
         request.erase(0, pos + delimiter.length());
     }
 
-    cout<<i<<endl;
     return occuredOnce;
 }
 
@@ -108,8 +97,8 @@ int contentLength(string request) {
             continue;
         }
 
-        if (headerName == "Content-Length:") {                //can be many "Content-Length: x" with the same number
-            if (numberStr.length() < 1) { //last char is "\n"
+        if (headerName == "Content-Length:") {      //can be many "Content-Length: x" with the same number
+            if (numberStr.length() < 1) { 			//last char is "\r\n"
                 return -1;
             }
             numberStr = numberStr.substr(0, numberStr.size() - 1);

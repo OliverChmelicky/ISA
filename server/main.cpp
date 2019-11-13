@@ -87,13 +87,12 @@ int main(int argc, char *argv[]) {
 
         char request[BUFSIZ];
         read(new_socket, request, BUFSIZ);
-        printf("%s\n", request);
-
+        cout<< request<<endl;
 
 		if (checkProtocol(request) != 0){
 			errors::sendErrorBadRequest(new_socket);
 			close(new_socket);
-			cout<<"CYBA";
+			cout<<"Unsupported protocol or version of protocol";
 			continue;
 		}
 
@@ -127,7 +126,6 @@ int main(int argc, char *argv[]) {
             std::cout << elem.first <<  " " << elem.second.size() << "\n";
         }
 
-        //pories free ak bude viac krat potrebne citat
         std::fill_n(request, BUFSIZ, 0);
         close(new_socket);
     }

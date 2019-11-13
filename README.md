@@ -3,7 +3,12 @@
 make
 ```
 
-**Štart servera:**
+**Odporúčaný command pred prekladom:**
+```
+make clean
+```
+
+**Štart serveru:**
 ```
 ./isaserver -p <port>
 ```
@@ -16,5 +21,6 @@ Klient po získaní odpovede vypíše _status code_, _status message_ a _body_ o
 
 **Obmädzenia:**
 Server prijíma requesty s maximálnou dĺžkou buffru BUFSIZ.
-Server nepodporuje Transfer-Encoding: chunked
- 
+Server nepodporuje Transfer-Encoding: chunked.
+Server po obslúžení socket uzavrie ( Connection : keep-alive nie je podporované ).
+Metódy POST a PUT vyžadujú Content-Length väčšie ako 0, inak server vráti error.
