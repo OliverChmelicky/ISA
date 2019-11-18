@@ -65,25 +65,6 @@ int main(int argc, char *argv[]) {
             exit(EXIT_FAILURE);
         }
 // END OF SOURCE
-//
-//              READING THE WHOLE MESSAGE IF IS BIGGER THAN BUFSIZE TODO
-//
-//        int *request = (int *)malloc(sizeof(int)*BUFSIZ);
-//        int readingCicle = 1;
-//        int bytesRead = 0;
-//        bytesRead = read(new_socket, request, BUFSIZ);
-//        if (bytesRead == BUFSIZ){
-//            int lastBytesInSocket = 0;
-//            while( lastBytesInSocket = read(new_socket, request, BUFSIZ) <= BUFSIZ ){
-//                readingCicle += 1;
-//                request = (int *)realloc(request, sizeof(int)*BUFSIZ*readingCicle);
-//            }
-//            bytesRead = (bytesRead * readingCicle) + lastBytesInSocket;
-//        }
-//
-//        string daco = stringz(request);
-//        char wholeRequest[BUFSIZ*readingCicle] = *request;
-//      DONT FORGET TO FREE THE POINTER
 
         char request[BUFSIZ];
         read(new_socket, request, BUFSIZ);
